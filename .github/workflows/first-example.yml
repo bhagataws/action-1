@@ -1,0 +1,15 @@
+name: My first workflows
+on: push
+
+jobs:
+    first_job: 
+        runs-on: ubuntu-latest
+        steps: 
+            - name: Hello worlds
+              run: echo "Hello world from Github actions"
+            
+            - name: check os details
+              run: cat /etc/os-release
+            
+            - name: Read file
+              run: cat README.md
