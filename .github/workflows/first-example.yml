@@ -11,5 +11,8 @@ jobs:
             - name: check os details
               run: cat /etc/os-release
             
+            - name: ls file
+              run: ls -ltr
+
             - name: Read file
               run: cat README.md
