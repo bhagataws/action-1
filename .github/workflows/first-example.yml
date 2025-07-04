@@ -1,6 +1,8 @@
 name: My first workflows
-on: push
-
+on:
+  push:
+    tags:
+      - '*'
 jobs:
     first_job: 
         runs-on: ubuntu-latest
@@ -30,4 +32,4 @@ jobs:
               with:
                 context: .
                 push: true
-                tags: bhagatdharmendra0/python-app2:latest
+                tags: bhagatdharmendra0/python-app2:${{ github.ref_name }}
