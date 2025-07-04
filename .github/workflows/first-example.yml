@@ -11,6 +11,9 @@ jobs:
             - name: check os details
               run: cat /etc/os-release
             
+            - name: git checkout
+              uses: actions/checkout@v4 
+
             - name: ls file
               run: ls -ltr
 
