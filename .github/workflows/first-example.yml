@@ -33,3 +33,12 @@ jobs:
                 context: .
                 push: true
                 tags: bhagatdharmendra0/python-app2:${{ github.ref_name }}
+            
+            - name: Scan Docker image with Docker Scout
+              uses: docker/scout-action@v1
+              with:
+                image: bhagatdharmendra0/python-app2:${{ github.ref_name }}
+                dockerhub-user: ${{ secrets.DOCKERHUB_USERNAME }}
+                dockerhub-password: ${{ secrets.DOCKERHUB_TOKEN }}
+                only-severities: critical,high
+                fail-on: critical,high
